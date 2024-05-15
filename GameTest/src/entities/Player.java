@@ -31,7 +31,7 @@ public class Player extends Entity {
 	}
 	
 	public static String ChooseCharacter() {
-		System.out.println("Choose the player: \n1)Uzumaki Naruto\n2)Hatake Kakashi");
+		System.out.println("Choose the player: \n1)Uzumaki Naruto\n2)Uchiha Sasuke\n3)Sakura Haruno\n4)Hatake Kakashi");
 		num = input.nextInt();
 		switch(num) {
 		case 1:
@@ -39,9 +39,12 @@ public class Player extends Entity {
 			break;
 		case 2:
 			source = "sprite2.png";
-		case 3:
-			source = "Untitled.png";
 			break;
+		case 3:
+			source = "sprite3.png";
+			break;
+		case 4:
+			source = "sprite4.png";
 		}
 		return source;
 	}
@@ -80,7 +83,7 @@ public class Player extends Entity {
 			playerAction = IDLE;
 
 		if (attacking)
-			playerAction = ATTACK_1;
+			playerAction = HIT;
 
 		if (startAni != playerAction)
 			resetAniTick();
